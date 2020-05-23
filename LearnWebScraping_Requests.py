@@ -30,17 +30,14 @@ links= soup.find_all("a")
                         # If we just want to extract the link that contains the text "About"
                         # on the page instead of every link. We can use the built-in
                         # "text" function to access the text content between the <a> </a> tags.
-#for link in links:
-#   if "About" in link.text:
-#       print(link)
-#       print(link.attrs['href']) #only prints out the href part of the a_tag, href indicates the link's destination
+for link in links:
+   if "About" in link.text:
+       print(link)
+       print(link.attrs['href']) #only prints out the href part of the a_tag, href indicates the link's destination
 
-#urls = []
+urls = []
                         #if we want to find all the things with the h2_tag and then inside of that h2_tag, extract the a_tag
-#for h2_tag in soup.find_all("h2"):             #find_all returns a list
-#    a_tag = h2_tag.find('a')                   #find finds a single element
-#    urls.append(a_tag.attrs['href'])              #add the href part of each a_tag to the urls list (Reminder: href indicates the link's destination)
-#print(urls)
-
-#************OBJECTS IN BEAUTIFUL SOUP*************
-
+for h2_tag in soup.find_all("h2"):             #find_all returns a list
+    a_tag = h2_tag.find('a')                   #find finds a single element
+    urls.append(a_tag.attrs['href'])              #add the href part of each a_tag to the urls list (Reminder: href indicates the link's destination)
+print(urls)
