@@ -106,7 +106,10 @@ if (choice == "Yes"):
     print("Right now, the dewPoint is", dewPoint)
     pressure = sideLinks[0].find_all('span')[5].text
     print("Right now, there is a pressure of", pressure)
-    visibility = sideLinks[0].find_all('span')[7].text #sometimes it works at index 7 and sometimes 6
+    if (len(sideLinks[0].find_all('span')) == 7):
+        visibility = sideLinks[0].find_all('span')[6].text #sometimes it works at index 7 and sometimes 6
+    else:
+        visibility = sideLinks[0].find_all('span')[7].text #if there is an arrow next to the pressure value on the website, then index 7 works
     print("Right now, the visibility is a distance of", visibility)
 
 else:
